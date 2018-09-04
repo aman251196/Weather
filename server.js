@@ -40,6 +40,12 @@ app.get('/bad', (req, res) => {
         errorMessage: 'BAD REQUEST BUDDY!!'
     });
 });
+
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Projects'
+    });
+});
 app.listen(Port, () => {
     console.log(`Server ${Port} is up and Running`);
 });

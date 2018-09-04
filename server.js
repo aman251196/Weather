@@ -6,7 +6,7 @@ const fs = require('fs');
 app.set('View engine', 'hbs');
 
 hbs.registerPartials(__dirname + '/views/partials');
-
+const Port = process.env.PORT || 3000;
 app.use((req, res, next) => {
     var now = new Date().toString();
     var log = `${now} : ${req.method} ${req.url}`;
@@ -40,6 +40,6 @@ app.get('/bad', (req, res) => {
         errorMessage: 'BAD REQUEST BUDDY!!'
     });
 });
-app.listen(3000, () => {
-    console.log('Server 3000 is up and Running');
+app.listen(Port, () => {
+    console.log(`Server ${Port} is up and Running`);
 });
